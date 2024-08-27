@@ -5,14 +5,15 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.2</version>
+		<version>3.3.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.start</groupId>
-	<artifactId>restwithspring</artifactId>
+	<groupId>com.admin</groupId>
+	<artifactId>adminspring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>restwithspring</name>
-	<description>REST Spring-Boot</description>
+	<packaging>war</packaging>
+	<name>adminspring</name>
+	<description>Métricas com Spring Boot Admin</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -32,18 +33,13 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -52,27 +48,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt</artifactId>
-			<version>0.9.1</version>
-		</dependency>
-
-		<dependency>
 			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<artifactId>spring-boot-admin-starter-server</artifactId>
 			<version>2.4.3</version>
 		</dependency>
 	</dependencies>
@@ -82,14 +59,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

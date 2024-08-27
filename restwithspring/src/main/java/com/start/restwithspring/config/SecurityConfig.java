@@ -61,8 +61,9 @@ public class SecurityConfig extends WebSecurityConfiguration {
 
         httpSecurity.csrf().disable()
                 .authorizeRequests().antMatchers("/auth/signin").permitAll()
+                .antMatchers("/actuator/**").permitAll()
                 .antMatchers("/produto/**").hasAnyRole("ADMIN")
-                .antMatchers("/pedido/**").authenticated()
+                .antMatchers("/order/**").authenticated()
                 .anyRequest().authenticated().and()
                 .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
