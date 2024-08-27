@@ -1,0 +1,5 @@
+Main.class
+org\buildingthef\mapper\UserMapperImpl.class
+org\buildingthef\model\UserModel.class
+org\buildingthef\dto\UserDTO.class
+org\buildingthef\mapper\UserMapper.class
